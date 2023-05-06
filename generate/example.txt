@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[NOME] - Episódio [NUMERO]</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <a href="../index.html" target="_self" rel="prev">
+        <img src="../imagens/imageSize.png" alt="SuperAnimes - Vivendo em um novo Mundo!!"></img>
+    </a>
+    <br>
+    <h1>[NOME] - Episódio [NUMERO]</h1>
+    <br>
+
+    <video controls width="720">
+        <source src="https://hd3.servertv001.com/animeshd/k/kanojo-okarishimasu/0[NUMERO].mp4">
+        <source src="videos/0[NUMERO].mp4">
+    </video>
+    <br>
+
+    <a href="[NUMERO-1].html" target="_self" rel="prev">
+        <img src="../imagens/play-anterior.png" alt="Vídeo Anterior" width="24">
+    </a>
+    <a href="[NUMERO+1].html" target="_self" rel="next">
+        <img src="../imagens/video-next.png" alt="Próximo Vídeo" width="24">
+    </a>
+    <br>
+    
+    <a href="[DOWNLOAD]" target="_blank" rel="external">
+        <img src="../imagens/baixar.png" alt="Fazer download" width="24">
+    </a>
+    <br>
+    <a href="home.html" target="_self" rel="prev">
+        <img src="../imagens/video-list-2.png" alt="Voltar ao anime">
+    </a>
+</body>
+</html>
