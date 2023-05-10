@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[NOME] - Episodio [NUMERO]</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../imagens/logo-icon-72-72.png" type="image/x-icon">
+</head>
+<body>
+    <a href="../index.html" target="_self" rel="prev">
+        <img src="../imagens/imageSize.png" alt="SuperAnimes - Vivendo em um novo Mundo!!"></img>
+    </a>
+    <br>
+    <h1>[NOME] - Episodio [NUMERO]</h1>
+    <br>
+
+    <video controls width="720">
+        <source src="[LINK1][NUMERO_SHOW][LINK2]">
+        <source src="videos/[NUMERO_SHOW].mp4">
+    </video>
+    <br>
+
+    <a href="[NUMERO-1].html" target="_self" rel="prev">
+        <img src="../imagens/play-anterior.png" alt="Video Anterior" width="24">
+    </a>
+    <a href="[NUMERO+1].html" target="_self" rel="next">
+        <img src="../imagens/video-next.png" alt="Proximo Video" width="24">
+    </a>
+    <br>
+    
+    <a href="[DOWNLOAD]" target="_blank" rel="external">
+        <img src="../imagens/baixar.png" alt="Fazer download" width="24">
+    </a>
+    <br>
+    <a href="home.html" target="_self" rel="prev">
+        <img src="../imagens/video-list-2.png" alt="Voltar ao anime">
+    </a>
+</body>
+</html>
