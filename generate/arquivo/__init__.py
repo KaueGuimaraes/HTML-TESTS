@@ -73,20 +73,56 @@ def escrever(nome, numero, download, link, link_num):
     link: [link1, link2]
     link_num: Número do episódio para o site
     """
-
-
+    
+    lista = list()
+    lista.append(['[NOME]', str(nome)])
+    lista.append(['[NUMERO]', str(numero)])
+    lista.append(['[DOWNLOAD]', str(download)])
+    lista.append(['[LINK1]', str(link[0])])
+    lista.append(['[LINK2]', str(link[1])])
     if numero < 9:
-        return acessar_template(nome=nome, numero=numero, download=download, numero_mais_1='0' + str(numero+1), numero_menos_1='0' + str(numero-1), link1=link[0], link2=link[1], numero_show='0' + str(numero))
+        lista.append(['[NUMERO+1]', '0' + str(numero+1)])
+        lista.append(['[NUMERO-1]', '0' + str(numero-1)])
+        lista.append(['[NUMERO_SHOW]', '0' + str(numero)])
     elif numero == 9:
-        return acessar_template(nome=nome, numero=numero, download=download, numero_mais_1='10', numero_menos_1='08', link1=link[0], link2=link[1], numero_show='0' + str(numero))
+        lista.append(['[NUMERO+1]', '10'])
+        lista.append(['[NUMERO-1]', '08'])
+        lista.append(['[NUMERO_SHOW]', '0' + str(numero)])
     elif numero == 10:
-        return acessar_template(nome=nome, numero=numero, download=download, numero_mais_1='11', numero_menos_1='09', link1=link[0], link2=link[1], numero_show=numero)
+        lista.append(['[NUMERO+1]', '11'])
+        lista.append(['[NUMERO-1]', '09'])
+        lista.append(['[NUMERO_SHOW]', str(numero)])
     elif numero > 10:
-        return acessar_template(nome=nome, numero=numero, download=download, numero_mais_1=numero+1, numero_menos_1=numero-1, link1=link[0], link2=link[1], numero_show=str(numero))
+        lista.append(['[NUMERO+1]', str(numero+1)])
+        lista.append(['[NUMERO-1]', str(numero-1)])
+        lista.append(['[NUMERO_SHOW]', str(numero)])
+    else:
+        mensage = 'ERRO DO GERADOR DE PAGINAS. (arquivo/__init__.py - line 100)'
+        lista.append(['[NUMERO+1]', mensage])
+        lista.append(['[NUMERO-1]', mensage])
+        lista.append(['[NUMERO_SHOW]', mensage])
+    return trocar_template('template.txt', lista=lista)
     
 
-def acessar_template(nome=0, numero=0, download=0, numero_mais_1=0, numero_menos_1=0, link1=0, link2=0, numero_show=0):
-    """
+def trocar_template(template, lista):
+    '''
+    Função para trocar infromações de determinado Template
+
+    template: Arquivo a ser escolhido para fazer a troca
+    lista: [antes, depois], [antes, depois], [antes, depois]. Em que antes=(string a ser substituída, que será deletada) e depois=(string que será a substituta, que será adicionada)
+    '''
+
+
+    acess_file = open(str(template), 'r')
+    content = str(acess_file.read())
+
+    for elemento in lista:
+        content = content.replace(elemento[0], elemento[1])
+    
+    return content
+
+"""def acessar_template(nome=0, numero=0, download=0, numero_mais_1=0, numero_menos_1=0, link1=0, link2=0, numero_show=0):
+    '''
     Função para trocar as informações diretamente do template
 
     nome: Nome do perfil
@@ -96,7 +132,7 @@ def acessar_template(nome=0, numero=0, download=0, numero_mais_1=0, numero_menos
     numero_menos1: Episódio anterior
     link1 e link2: [link1, link2]
     numer_show: Número usado para estabelecer o link de assistir
-    """
+    '''
     #.replace('[NUMERO]', numero).replace('[NUMERO-1]', '0' + str(numero-1)).replace('[NUMERO+1]', '0' + str(numero+1)).replace('[DOWNLOAD]', download).replace('[LINK1]', link[0]).replace('[LINK2]', link[1])
     
     
@@ -121,4 +157,4 @@ def acessar_template(nome=0, numero=0, download=0, numero_mais_1=0, numero_menos
     template = template.replace('[LINK1]', link1)
     template = template.replace('[LINK2]', link2)'''
 
-    return template
+    return template"""
